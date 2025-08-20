@@ -1,0 +1,41 @@
+<section class="container mx-auto">
+    <h2 class="text-xl font-bold mb-2">
+        Casas
+    </h2>
+    <h3 class="text-xl text-gray-500 mb-2">
+        {{ 3 }} casas disponibles
+    </h3>
+</section>
+
+<section class="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
+   
+    <!-- Card -->
+    @for (house of houses(); track house.id; let i = $index) {
+    <div class="card bg-base-100 shadow-sm rounded-t-md overflow-hidden">
+
+        <app-mini-map [lngLat]="house.lngLat" />
+  <!-- <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure> -->
+  <div class="card-body">
+    <h2 class="card-title">
+      {{ house.name }}
+      @if ( i === 1 ) {
+      <div class="badge badge-secondary">Nuevo</div>
+      }
+    </h2>
+    <p>{{ house.description }}</p>
+    <div class="card-actions justify-end">
+        @for (tag of house.tags; track $index) {
+      <div class="badge badge-outline badge-accent">{{ tag }}</div>
+        }
+    </div>
+  </div>
+</div>}
+
+
+
+</section>
+

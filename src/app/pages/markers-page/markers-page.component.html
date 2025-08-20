@@ -1,0 +1,35 @@
+<div #map class="h-[60vh] sm:h-[calc(100vh-64px)] "></div>
+
+<section class="h-[40vh] sm:fixed sm:w-[300px] bg-white sm:rounded sm:top-20 sm:left-10 p-5 overflow-y-scroll">
+    <h2 class="text-xl font-bold text-black mb-2">
+        Marcadores
+    </h2>
+
+    <div class="flex flex-col gap-2">
+        @for (marker of markers(); track marker.id) {
+        <div class="form-control" 
+        (click)="flyToMarker(marker.mapboxMarker.getLngLat())"
+        (dblclick)="deleteMarker(marker)"
+        >
+
+            <label class="label cursor-pointer">
+                <span class="label-text text-black text-xs text-wrap">
+                    {{ marker.mapboxMarker.getLngLat() | json }}
+                </span>
+                <input type="radio" name="radio-10" class="radio absolute right-5" 
+                [style]="{ backgroundColor: marker.mapboxMarker._color }"
+                checked="checked"/>
+            </label>
+        </div>
+    } @empty {
+        <div class="flex justify-center items-center bg-blue-100 rounded py-5">
+            <p class="text-xs text-secondary">
+                No hay marcadores
+            </p>
+        </div>
+    }
+    
+
+
+    </div>
+</section>
