@@ -1,6 +1,6 @@
 # MapsApp
 
-Mapa web interactivo desarrollado con Angular y Mapbox, renderizado de mapas vectoriales e interacción en tiempo real, permitiendo al
+Mapa web interactivo desarrollado con Angular y Mapbox. Renderizado de mapas vectoriales e interacción en tiempo real, permitiendo al
 usuario desplazarse, hacer zoom y crear marcadores en el mapa.
 
 Levantar proyecto en Dev
